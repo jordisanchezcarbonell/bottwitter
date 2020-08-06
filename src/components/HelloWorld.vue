@@ -104,32 +104,32 @@ export default {
       info: null,
     };
   },
-  client:null,
+  client: null,
   name: "HelloWorld",
   props: {
     msg: String,
   },
 
-  
-
   mounted() {
-    this.client= new Twitter({
-    consumer_key: "uYeFMwzDK9QS8hUxFDxh0mFRZ",
-    consumer_secret: "z1F6QFA2hnKqRtpHav1qOcwAGbUG7Ywb6hKlFAdUl9UjMS9IRJ",
-    access_token_key: "1290702262130683906-23rJxLMOaPJLljBraJSOowokWPHzDf",
-    access_token_secret: "ZR20WDN8msMMAMQabDq4cIHvy4cXmw8UlTR2jCBGDcTsj",
-  }),
-    this.client
-      .post("statuses/update", {
-        status: "PRUEBA TWITTER IN VUE ",
-      })
-      .then(function(tweet) {
-        console.log(tweet);
-        info = "enviado";
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+    (this.client = new Twitter({
+      consumer_key: "uYeFMwzDK9QS8hUxFDxh0mFRZ",
+      consumer_secret: "z1F6QFA2hnKqRtpHav1qOcwAGbUG7Ywb6hKlFAdUl9UjMS9IRJ",
+      access_token_key: "1290702262130683906-23rJxLMOaPJLljBraJSOowokWPHzDf",
+      access_token_secret: "ZR20WDN8msMMAMQabDq4cIHvy4cXmw8UlTR2jCBGDcTsj",
+    })),
+      this.client
+        .post("statuses/update", {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "text/html",
+          status: "PRUEBA TWITTER IN VUE ",
+        })
+        .then(function(tweet) {
+          console.log(tweet);
+          info = "enviado";
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
   },
 };
 </script>
