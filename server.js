@@ -11,9 +11,13 @@ var myVar = setInterval(myTimer, 10000);
 
 function myTimer() {
   client
-    .post("statuses/update", {
-      status: "PRUEBA TWITTER SERVER EXTERNO " + contador,
-    })
+    .post(
+      "statuses/update",
+      { mode: "no-cors" },
+      {
+        status: "PRUEBA TWITTER SERVER EXTERNO " + contador,
+      }
+    )
     .then(function(tweet) {
       console.log(tweet);
     })
