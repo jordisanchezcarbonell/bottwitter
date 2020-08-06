@@ -124,8 +124,7 @@ export default {
       })),
         this.client
           .post("statuses/update", {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "text/html",
+      
             status: "PRUEBA TWITTER IN VUE" + this.contador,
           })
           .then(function(tweet) {
